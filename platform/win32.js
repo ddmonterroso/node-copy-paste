@@ -3,7 +3,7 @@ var path = require("path");
 
 var vbsPath = path.join(__dirname, ".\\fallbacks\\paste.vbs");
 
-var paste = { command: "cscript", args: [ "/Nologo", vbsPath ] };
+var paste = { command: "cscript", args: [ "/Nologo", '"'+vbsPath+'"' ] };
 paste.full_command = [ paste.command, paste.args[0], '"'+vbsPath+'"' ].join(" ");
 
 exports.copy = { command: "clip", args: [] };
